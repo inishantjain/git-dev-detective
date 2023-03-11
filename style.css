@@ -1,0 +1,231 @@
+*,::after,::before{
+    margin: 0;padding: 0;box-sizing: border-box;
+}
+html::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+html::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+html::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+	border: 2px solid #555555;
+}
+
+:root{
+    --padding-inline : 20px;
+    --body-bgclr : #dae7f25d;
+    --heading-color: #4B6A9B;
+    --btn: #0079ff;
+    --rounded: 15px; 
+    --lm-text: #4B6A9B;
+    --card-bgclr: #fefefe;
+    --social-icon-filter : brightness(100%)
+}
+.dark{
+    --social-icon-filter : brightness(1000%);
+    --card-bgclr: #1E2A47;
+    --body-bgclr : #141D2F;
+    --lm-text: white;
+    --heading-color: white;
+    --white: white;
+}
+body{
+    background-color: var(--body-bgclr);
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 1px;
+}
+
+.flex{
+    display: flex;
+}
+
+
+.container{
+    padding: var(--padding-inline);
+    color: var(--white, black);
+    margin: 0 auto;
+    margin-top: 4rem;
+    width: fit-content;
+}
+h1{
+    color: var(--heading-color, black);
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.header{
+    justify-content: space-between;
+    align-items: baseline;
+}
+#nightMode{
+    text-transform: uppercase;
+    all: unset;
+    cursor: pointer;
+}
+
+form{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    background: var(--card-bgclr);
+    display: flex;
+    align-items: center;
+    border-radius: var(--rounded);
+    padding: 10px;
+    gap: 20px;
+    margin-block: 2rem;
+}
+form input{
+    background: var(--card-bgclr);
+    font-family: inherit;
+    flex-grow:1;
+    flex-shrink: 1;
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+    color: inherit;
+}
+input::placeholder{
+    font-family: inherit;
+    color: inherit;
+}
+form::before {
+    translate: 0 1px;
+    content: url(assets/search-icon.svg);
+    padding-left: 15px;
+}
+form button{
+    border: none;
+    outline: none;
+    color: white;
+    font-size: medium;
+    background-color:var(--btn);
+    border-radius: 10px;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+}
+form button:hover{
+    background-color: #60abff;
+}
+
+#noResultText{
+    color: red;
+    display: none;
+    font-weight: normal;
+    padding-inline: .5rem;
+}
+
+
+#avatar{
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile{
+    flex-flow: wrap;
+    column-gap: 3rem;
+    row-gap: 1.5rem;
+    padding: 2rem;
+    border-radius: var(--rounded);
+    background: var(--card-bgclr);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.profile-data div:nth-child(1){
+    justify-content: space-between;
+    flex-flow: wrap;
+    column-gap: 5rem;
+    row-gap: .2rem;
+    align-items: baseline;
+}
+.profile-data{
+    max-width:480px;
+}
+#bio{
+    color: var(--lm-text);
+    opacity: 75%;
+}
+#username{
+    display: block;
+    color: var(--btn);
+    margin-top: .4rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+
+.status {
+    background-color: var(--body-bgclr);
+    flex-flow: wrap;
+    gap: 1rem;
+    padding: 1rem 1.7rem;
+    border-radius: var(--rounded);
+    margin-block: 2rem;
+}
+.status div{
+    flex: 1;
+}
+.status div p:nth-child(1){
+    margin-bottom: 1rem;
+    color: var(--lm-text);
+    opacity: 80%;
+}
+
+.socials{
+    flex-flow: wrap;
+    gap: 1rem;
+}
+.socials *{
+    color: var(--lm-text);
+}
+.socials div img{
+    filter: var(--social-icon-filter);
+}
+.socials div{
+    flex: 47%;
+
+}
+
+
+@media only screen and (max-width:750px) {
+    form input{
+        font-size: .7rem;
+    }
+    form button{
+        /* padding: 15px 30px; */
+        font-size: .7rem;
+    }
+    .container{
+        max-width: 480px;
+    }
+    h1{
+        font-size: 1.5rem;
+    }
+    #searchForm{
+        position: relative;
+    }
+    #noResultText{
+        position: absolute;
+        right: 0; top: 0; translate: 0 -100%;
+    }
+    .profile-data{
+        flex-flow: column
+    }
+    #profileName{
+        font-size: 1.3rem;
+    }
+    #joinDate{
+        font-size: .8rem;
+    }
+    .status div p:nth-child(1){
+        font-size: .8rem;
+    }
+}

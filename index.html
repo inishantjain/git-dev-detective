@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Detective</title>
+    <link rel="icon" href="assets/favicon.ico">
+
+        <!-- font-family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="">
+    <div class="container ">
+        <div class="header flex">
+            <h1>DevDetective</h1>
+            <button id="nightMode"><img width="28" src="assets/moon-icon.svg" alt=""></button>
+        </div>
+
+        <!-- search box -->
+        <form id="searchForm" autocomplete="off" onsubmit="event.preventDefault();" role="search">
+            <input id="searchInput" type="search" placeholder="Enter username..."/>
+            <p id="noResultText">No search results</p>
+            <button id="search-btn" type="submit">Search</button>
+        </form>
+
+        <!-- details -->
+        <div class="flex profile">
+            <!-- profile img -->
+            <img id="avatar" src="" alt="" width="120" height="120">
+
+            <!--profile datasection-->
+
+            <!-- name joined and username -->
+            <div class="profile-data">
+                <div class="flex">
+                    <h2 id="profileName"></h2>
+                    <p id="joinDate"></p>
+                </div>
+                <a href="" target="_blank" id="username">@</a>
+                
+                <!-- description -->
+                <div id="bio">Bio</div>
+
+                <!-- status -->
+                <div class="flex status">
+
+                    <div>
+                        <p>Repos</p>
+                        <p id="repo">0</p>
+                    </div>
+                    <div>
+                        <p>Followers</p>
+                        <p id="followers">0</p>
+                    </div>
+                    <div>
+                        <p>Following</p>
+                        <p id="following">0</p>
+                    </div>
+
+                </div>
+
+                <!-- profile socials -->
+                <div class="socials flex">
+                    <!-- location -->
+                    <div>
+                        <img width="24" src="assets/location-icon.svg" alt="">
+                        <span id="location">Not Available</span>
+                    </div>
+                    <!-- link -->
+                    <div>
+                        <img width="24" src="assets/link-icon.svg" alt="">
+                        <a id="portfolioLink" target="_blank" href="#">Not Available</a>
+                    </div>
+                    <!-- twitter -->
+                    <div>
+                        <img width="24" src="assets/twitter-icon.svg" alt="">
+                        <a id="twitterLink" href="#">Not Available</a>
+                    </div>
+                    <!-- company -->
+                    <div>
+                        <img width="24" src="assets/company-icon.svg" alt="">
+                        <span id="company">Not Available</span>
+                    </div>
+                </div>
+
+            </div>
+           
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="nightmode.js"></script>
+</body>
+</html>
