@@ -182,6 +182,7 @@ form button:hover{
 .socials{
     flex-flow: wrap;
     gap: 1rem;
+    text-transform: capitalize;
 }
 .socials *{
     color: var(--lm-text);
